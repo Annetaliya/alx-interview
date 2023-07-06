@@ -1,24 +1,19 @@
 #!/usr/bin/python3
-'''returns true of locboxes can all be opened and false if not'''
-
-
-def join(lst1, lst2):
-    results = []
-    for num in lst2:
-        results += lst1[num]
-    return results
+"""Method that determines if all the boxes can be opened."""
 
 
 def canUnlockAll(boxes):
-    '''returns true of locboxes can all be opened and false if not'''
-    index = 0
-    total = list(set(boxes[0]) | {0})
-    added = True
-    while added:
-        added = False
-        for j in join(boxes, total[index:]):
-            if j not in total:
-                total.append(j)
-                index += 1
-                added = True
-        return len(total) == len(boxes)
+    """Method that determines if all the boxes can be opened.
+    Args:
+        boxes: list of lists
+    Returns:
+        True if all boxes can be opened, else return False
+    """
+    keys = [0]
+    for key in keys:
+        for box in boxes[key]:
+            if box not in keys and box < len(boxes):
+                keys.append(box)
+    if len(keys) == len(boxes):
+        return True
+    return False
