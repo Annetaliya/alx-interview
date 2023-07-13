@@ -1,0 +1,1 @@
+#Solutions to minimum operations in python
