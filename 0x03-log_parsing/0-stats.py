@@ -1,9 +1,14 @@
 #!/usr/bin/python3
-
+''' 
+    python function that calculates log metrics
+'''
 import sys
 import signal
 
 def print_statistics(total_size, status_counts):
+    '''
+        function that prints the statistics
+    '''
     print(f"Total file size: {total_size}")
     for status_code in sorted(status_counts.keys()):
         print(f"{status_code}: {status_counts[status_code]}")
