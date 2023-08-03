@@ -1,0 +1,1 @@
+## Solution to N Queens interview question
